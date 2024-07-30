@@ -1,3 +1,4 @@
+
 <?php
 
 try {
@@ -10,11 +11,9 @@ try {
 
     $db =  new PDO("informix:host=$host; service=$service;database=$database; server=$server; protocol=onsoctcp;EnableScrollableCursors=1", "$user", "$pass");
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   
-    
 } catch (PDOException $e) {
     echo json_encode([
-        "detalle" => $e->getMessage(),       
+        "detalle" => $e->getMessage(),
         "mensaje" => "Error de conexión bd",
 
         "codigo" => 5,
